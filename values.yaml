@@ -1,0 +1,56 @@
+imageRegistry: "eriknet0"
+
+backend:
+  image:
+    repository: "service-hub-backend"
+    tag: "" # Defaults to Chart.appVersion when empty
+  imagePullSecrets: [] # Example: [{name: my-registry-secret}]
+  replicas: 1
+  containerPort: 8080
+  servicePort: 8080
+  jwksUri: "REPLACE_ME"
+  datasource:
+    url: "REPLACE_ME"
+    username: "REPLACE_ME"
+    passwordSecret:
+      name: "service-hub"
+      key: "SPRING_DATASOURCE_PASSWORD"
+  keycloak:
+    adminServerUrl: "REPLACE_ME"
+    adminRealm: "valtimo"
+    adminClientId: "service-hub"
+    adminClientSecretSecret:
+      name: "service-hub"
+      key: "KEYCLOAK_ADMIN_CLIENT_SECRET"
+  minio:
+    endpoint: "REPLACE_ME"
+    bucket: "service-hub-logos"
+    accessKeySecret:
+      name: "service-hub"
+      key: "MINIO_ACCESS_KEY"
+    secretKeySecret:
+      name: "service-hub"
+      key: "MINIO_SECRET_KEY"
+
+frontend:
+  image:
+    repository: "service-hub-frontend"
+    tag: "" # Defaults to Chart.appVersion when empty
+  imagePullSecrets: [] # Example: [{name: my-registry-secret}]
+  replicas: 1
+  containerPort: 8081
+  servicePort: 8081
+  keycloak:
+    url: "REPLACE_ME"
+    realm: "valtimo"
+    clientId: "service-hub"
+
+ingress:
+  enabled: true
+  ingressClassName: "" # Set to e.g. "nginx" to bind to a specific ingress controller
+  host: "REPLACE_ME"
+  annotations:
+    ingress.kubernetes.io/custom-request-headers: "X-Forwarded-Proto: https"
+  tls:
+    enabled: false
+    secretName: ""
