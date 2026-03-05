@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  service-hub:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2026-03-05T21:54:14.362651+01:00"
+    description: A Helm chart for the Service Hub backend and frontend
+    digest: 4a96dd02297da4e20f5002273276376cd57bdc59e28383cfd4815587c64f5f6e
+    name: service-hub
+    type: application
+    urls:
+    - https://ritense.github.io/service-hub-helm/service-hub-0.1.0.tgz
+    version: 0.1.0
+generated: "2026-03-05T21:54:14.356324+01:00"
