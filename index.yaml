@@ -3,12 +3,12 @@ entries:
   service-hub:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-03-05T21:54:14.362651+01:00"
+    created: "2026-03-07T10:10:56.930601+01:00"
     description: A Helm chart for the Service Hub backend and frontend
-    digest: 4a96dd02297da4e20f5002273276376cd57bdc59e28383cfd4815587c64f5f6e
+    digest: 9626d7ebac79ed9a29d6b73c771ce49e341b2d938008b1b1124b0b9870b53d52
     name: service-hub
     type: application
     urls:
-    - https://ritense.github.io/service-hub-helm/service-hub-0.1.0.tgz
-    version: 0.1.0
-generated: "2026-03-05T21:54:14.356324+01:00"
+    - https://ritense.github.io/service-hub-helm/service-hub-0.2.0.tgz
+    version: 0.2.0
+generated: "2026-03-07T10:10:56.926181+01:00"
