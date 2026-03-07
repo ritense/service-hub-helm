@@ -17,8 +17,8 @@ backend:
       key: "SPRING_DATASOURCE_PASSWORD"
   keycloak:
     adminServerUrl: "REPLACE_ME"
-    adminRealm: "valtimo"
-    adminClientId: "service-hub"
+    adminRealm: "service-hub-admin"
+    adminClientId: "service-hub-admin-m2m-client"
     adminClientSecretSecret:
       name: "service-hub"
       key: "KEYCLOAK_ADMIN_CLIENT_SECRET"
