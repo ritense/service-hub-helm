@@ -49,6 +49,7 @@ frontend:
     url: "REPLACE_ME"
     realm: "valtimo"
     clientId: "service-hub"
+  exchangeUrl: "REPLACE_ME"
 
 ingress:
   enabled: true

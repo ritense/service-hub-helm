@@ -20,3 +20,4 @@ data:
   KEYCLOAK_URL: "{{ .Values.frontend.keycloak.url }}"
   KEYCLOAK_REALM: "{{ .Values.frontend.keycloak.realm }}"
   KEYCLOAK_CLIENT_ID: "{{ .Values.frontend.keycloak.clientId }}"
+  EXCHANGE_URL: "{{ .Values.frontend.exchangeUrl }}"
