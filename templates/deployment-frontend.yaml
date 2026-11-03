@@ -43,3 +43,8 @@ spec:
                 configMapKeyRef:
                   name: {{ .Release.Name }}
                   key: KEYCLOAK_CLIENT_ID
+            - name: EXCHANGE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Release.Name }}
+                  key: EXCHANGE_URL

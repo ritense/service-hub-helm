@@ -64,23 +64,43 @@ spec:
                 secretKeyRef:
                   name: {{ .Values.backend.keycloak.adminClientSecretSecret.name }}
                   key: {{ .Values.backend.keycloak.adminClientSecretSecret.key }}
-            - name: MINIO_ENDPOINT
+            - name: S3_ENDPOINT
               valueFrom:
                 configMapKeyRef:
                   name: {{ .Release.Name }}
-                  key: MINIO_ENDPOINT
-            - name: MINIO_BUCKET
+                  key: S3_ENDPOINT
+            - name: S3_LOGO_BUCKET
               valueFrom:
                 configMapKeyRef:
                   name: {{ .Release.Name }}
-                  key: MINIO_BUCKET
-            - name: MINIO_ACCESS_KEY
+                  key: S3_LOGO_BUCKET
+            - name: S3_ACCESS_KEY
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Values.backend.minio.accessKeySecret.name }}
-                  key: {{ .Values.backend.minio.accessKeySecret.key }}
-            - name: MINIO_SECRET_KEY
+                  name: {{ .Values.backend.s3.accessKeySecret.name }}
+                  key: {{ .Values.backend.s3.accessKeySecret.key }}
+            - name: S3_SECRET_KEY
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Values.backend.minio.secretKeySecret.name }}
-                  key: {{ .Values.backend.minio.secretKeySecret.key }}
+                  name: {{ .Values.backend.s3.secretKeySecret.name }}
+                  key: {{ .Values.backend.s3.secretKeySecret.key }}
+            - name: SLACK_NOTIFICATIONS_ENABLED
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Release.Name }}
+                  key: SLACK_NOTIFICATIONS_ENABLED
+            - name: SLACK_WEBHOOK_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Release.Name }}
+                  key: SLACK_WEBHOOK_URL
+            - name: SLACK_REMINDER_CRON
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Release.Name }}
+                  key: SLACK_REMINDER_CRON
+            - name: SERVICEHUB_BASE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Release.Name }}
+                  key: SERVICEHUB_BASE_URL
