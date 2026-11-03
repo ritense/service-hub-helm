@@ -84,3 +84,23 @@ spec:
                 secretKeyRef:
                   name: {{ .Values.backend.s3.secretKeySecret.name }}
                   key: {{ .Values.backend.s3.secretKeySecret.key }}
+            - name: SLACK_NOTIFICATIONS_ENABLED
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Release.Name }}
+                  key: SLACK_NOTIFICATIONS_ENABLED
+            - name: SLACK_WEBHOOK_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Release.Name }}
+                  key: SLACK_WEBHOOK_URL
+            - name: SLACK_REMINDER_CRON
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Release.Name }}
+                  key: SLACK_REMINDER_CRON
+            - name: SERVICEHUB_BASE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Release.Name }}
+                  key: SERVICEHUB_BASE_URL
